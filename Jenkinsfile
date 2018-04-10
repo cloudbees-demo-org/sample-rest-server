@@ -11,5 +11,13 @@ pipeline {
             sh 'mvn clean package'
          }
       }
+      stage('Masters Tests') {
+         when {
+            branch 'master'
+         }
+         steps {
+            echo "Run the master tests!"
+         }
+      }
    }
 }
